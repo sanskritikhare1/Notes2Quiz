@@ -1,0 +1,9 @@
+Flask
+PyPDF2
+langchain
+langchain-huggingface
+langchain-community
+langchain-groq
+huggingface-hub
+faiss-cpu
+python-dotenv

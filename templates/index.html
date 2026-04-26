@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Quiz Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card">
+            <h1>🧠 Notes2Quiz 📚</h1>
+            <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="pdf">Upload PDF</label>
+                    <input type="file" name="pdf" id="pdf" accept="application/pdf" required>
+                </div>
+                <div class="form-group">
+                    <label for="prompt">Quiz Instructions</label>
+                    <textarea name="prompt" id="prompt" placeholder="e.g., Create 5 MCQs from this file..." required></textarea>
+                </div>
+                <button type="submit" id="generateBtn">🚀 Generate Quiz</button>
+            </form>
+
+            <div id="loading" class="hidden spinner">
+                <div class="loader"></div>
+                <p>Generating your quiz...</p>
+            </div>
+
+            <div id="quizResult" class="result-box"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
